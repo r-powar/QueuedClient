@@ -8,12 +8,14 @@ import { routing } from './app.routing';
 
 import { AppComponent } from './app.component';
 import {QueuedService} from './queued.service';
-import { RandomComponent } from './random/random.component';
+import { HomeComponent } from './home/home.component';
+import { ProviderComponent } from './provider/provider.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RandomComponent
+    HomeComponent,
+    ProviderComponent
   ],
   imports: [
     BrowserModule,
