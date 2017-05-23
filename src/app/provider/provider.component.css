@@ -1,9 +1,14 @@
- .sidebar-offcanvas {
-    position: absolute;
-    width: 60%; /* 6 columns */
-  }
+ /*.sidebar-offcanvas {*/
+    /*position: absolute;*/
+    /*width: 60%; !* 6 columns *!*/
+  /*}*/
 
  .row-offcanvas{
    margin-left: -30px;
+   margin-top: 150px;
+ }
+
+ .form-control{
+   width: 50%;
  }
 
