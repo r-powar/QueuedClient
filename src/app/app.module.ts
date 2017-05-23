@@ -14,6 +14,7 @@ import { SearchresultsComponent } from './searchresults/searchresults.component'
 
 import { HomeComponent } from './home/home.component';
 import { ProviderComponent } from './provider/provider.component';
+import { ReservationComponent } from './reservation/reservation.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ProviderComponent } from './provider/provider.component';
     SearchbarComponent,
     SearchresultsComponent,
     HomeComponent,
-    ProviderComponent
+    ProviderComponent,
+    ReservationComponent
   ],
   imports: [
     BrowserModule,
