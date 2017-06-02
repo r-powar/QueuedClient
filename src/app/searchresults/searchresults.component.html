@@ -9,7 +9,7 @@
         <p class='card-text' style='margin-bottom: 0px;'><span>Budget: </span>{{result.budget}}</p>
         <p class='card-text'><span>Wait Time: </span>{{result.lowWait}}-{{result.highWait}}<span>  minutes</span></p>
         <form method='post'>
-          <a (click)="makeReservation()" class='btn btn-primary' role='button'>Queue Me</a>
+          <a routerLink="/reservation" (click)="makeReservation()" class='btn btn-primary' role='button'>Queue Me</a>
         </form>
       </div>
     </div>

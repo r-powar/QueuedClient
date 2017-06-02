@@ -2,18 +2,16 @@ import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { Observable } from 'rxjs/observable';
 import 'rxjs/add/operator/map';
-import { RestaurantModel } from '../restaurantModel';
+import { RestaurantModel } from './share/restaurantModel';
 
 @Injectable()
 export class SearchService {
   private results;
-  url:string = "http://localhost:8080/queued/restaurantlist";
+  url = 'http://localhost:8080/queued/restaurantlist';
 
-  constructor(private http: Http){
-    
-  }
+  constructor(private http: Http) {}
 
-  getResults(): Observable<RestaurantModel[]>{
+  getResults(): Observable<RestaurantModel[]> {
     return this.http.get(this.url).map(res => res.json());
   }
 }

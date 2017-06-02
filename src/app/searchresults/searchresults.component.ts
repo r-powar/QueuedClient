@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../search.service';
-import { RestaurantModel } from '../../restaurantModel';
+import { RestaurantModel } from '../share/restaurantModel';
 
 @Component({
   selector: 'app-searchresults',
@@ -11,7 +11,7 @@ export class SearchresultsComponent implements OnInit {
   private results:RestaurantModel[];
 
   constructor(private _SearchService:SearchService) {
-    
+
   }
 
   ngOnInit() {

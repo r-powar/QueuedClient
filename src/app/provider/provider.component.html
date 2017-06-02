@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <div class="row row-offcanvas row-offcanvas-right">
+    <div class="col-xs-6 col-sm-3 col-sm-pull-9 sidebar-offcanvas" id="sidebar">
+      <div class="list-group">
+        <a class="list-group-item active">Overview</a>
+        <a class="list-group-item" (click)="showTimeForm()">Submit Data</a>
+        <a class="list-group-item">Feedback</a>
+        <a class="list-group-item">Analytics</a>
+        <a class="list-group-item">Guest List</a>
+      </div>
+    </div>
+    <div class="col-xs-9 col-sm-8 col-sm-push-3">
+      <div class="jumbotron" id="timeForm" *ngIf="showTime">
+        <h2>Enter Estimated Wait Times</h2>
+        <form action="" (ngSubmit)="submitTime()">
+          <div class="form-group">
+            <input name="id" type="text" class="form-control" id="restaurantID" placeholder="Restaurant ID" [(ngModel)]="model.id">
+          </div>
+          <div class="form-group">
+            <input name="lowWait" type="text" class="form-control" id="lowWaitTime" placeholder="Estimated Low Wait Time" [(ngModel)]="model.lowWait">
+          </div>
+          <div class="form-group">
+            <input name="highWait" type="text" class="form-control" id="highWaitTime" placeholder="Estimated High Wait Time" [(ngModel)]="model.highWait">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
