@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchresultsComponent } from '../searchresults/searchresults.component';
 import { SearchService } from '../search.service';
 import { HttpModule } from '@angular/http';
+import { RestaurantModel } from '../share/restaurantModel';
+import { SearchModel } from '../share/searchModel';
 
 @Component({
   selector: 'app-searchbar',
@@ -18,16 +19,44 @@ export class SearchbarComponent implements OnInit {
   private searchWait;
   private showResults;
 
+  private results:RestaurantModel[];
+
   constructor(private _SearchService:SearchService) {
-    this.showResults = false;
   }
 
   ngOnInit() {
-
+    this.searchCity = "";
+    this.searchState = "";
+    this.searchCuisine = "";
+    this.searchBudget = "";
+    this.searchWait = null;
+    this.showResults = false;
   }
 
   runSearch() {
+    var search: SearchModel = new SearchModel();
+    search.searchCity = this.searchCity;
+    search.searchState = this.searchState;
+    search.searchCuisine = this.searchCuisine;
+    search.searchBudget = this.searchBudget;
+    if (this.searchWait != null)
+    {
+      search.searchWait = this.searchWait;
+    }
+    else
+    {
+      search.searchWait = 0;
+    }
+
+    this._SearchService.searchResults(search).subscribe(results => {
+      this.results = results;
+    });
+
     this.showResults = true;
+  }
+
+  makeReservation() {
+
   }
 
 }

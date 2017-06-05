@@ -10,7 +10,6 @@ import { AppComponent } from './app.component';
 import {QueuedService} from './queued.service';
 
 import { SearchbarComponent } from './searchbar/searchbar.component';
-import { SearchresultsComponent } from './searchresults/searchresults.component';
 
 import { HomeComponent } from './home/home.component';
 import { ProviderComponent } from './provider/provider.component';
@@ -21,7 +20,6 @@ import { ReservationComponent } from './reservation/reservation.component';
   declarations: [
     AppComponent,
     SearchbarComponent,
-    SearchresultsComponent,
     HomeComponent,
     ProviderComponent,
     ReservationComponent
