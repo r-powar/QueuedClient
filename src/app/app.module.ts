@@ -15,6 +15,7 @@ import { SearchresultsComponent } from './searchresults/searchresults.component'
 import { HomeComponent } from './home/home.component';
 import { ProviderComponent } from './provider/provider.component';
 import { ReservationComponent } from './reservation/reservation.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ReservationComponent } from './reservation/reservation.component';
     SearchresultsComponent,
     HomeComponent,
     ProviderComponent,
-    ReservationComponent
+    ReservationComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

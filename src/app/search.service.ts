@@ -7,7 +7,7 @@ import { RestaurantModel } from './share/restaurantModel';
 @Injectable()
 export class SearchService {
   private results;
-  url = 'http://localhost:8080/queued/restaurantlist';
+  url = '/queued/restaurantlist';
 
   constructor(private http: Http) {}
 
