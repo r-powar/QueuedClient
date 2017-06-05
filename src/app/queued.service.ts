@@ -20,4 +20,9 @@ export class QueuedService {
       .map((res: Response) => res.json())
       .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
+
+  getUserInfo() {
+    return this.http.get(this.host + '/auth/userInfo')
+      .map(response => response.json);
+  }
 }
