@@ -1,0 +1,13 @@
+.login-page{
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.login-container{
+  margin-top: 10%;
+}
+
+.fbButton{
+  background-color: #3b5998;
+}
