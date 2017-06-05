@@ -1,77 +1,91 @@
 <!-- Restaurant Search -->
-<div id="searchRestaurants" class="starter-template">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-9">
-                <h2>Find Restaurants in:</h2>
-                <form id="search">
-                    <!-- Location Search -->
-                    <div class="form-group row" style="margin-bottom: 0px;">
-                        <div class="col-6">
-                            <label for="city-input" style="margin-bottom: 0px;">City</label>
-                        </div>
-                        <div class="col-4">
-                            <label for="state-input" style="margin-bottom: 0px;">State</label>
-                        </div>
+<div class="container" id="searchBox">
+    <div class="jumbotron">
+        <div class="col-12">
+            <h2>Find Restaurants in:</h2>
+            <form id="search">
+                <!-- Location Search -->
+                <div class="form-group row" style="margin-bottom: 0px;">
+                    <div class="col-6">
+                        <label for="city-input" style="margin-bottom: 0px;">City</label>
                     </div>
-                    <div class="form-group row" style="margin-bottom: 5px;">
-                        <div class="col-6" style="padding-right: 0px;">
-                            <input class="form-control" type="text" [(ngModel)]="searchCity" [ngModelOptions]="{standalone: true}" (keyup.enter)="runSearch()" id="city-input">
-                        </div>
-                        <div class="col-4" style="padding-right: 0px;">
-                            <select class="form-control" [(ngModel)]="searchState" [ngModelOptions]="{standalone: true}" (keyup.enter)="runSearch()" id="state-input">
-                                <option value=""></option><option value="AK">Alaska</option><option value="AL">Alabama</option><option value="AR">Arkansas</option><option value="AZ">Arizona</option>
-                                <option value="CA">California</option><option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DC">District of Columbia</option>
-                                <option value="DE">Delaware</option><option value="FL">Florida</option><option value="GA">Georgia</option><option value="HI">Hawaii</option><option value="IA">Iowa</option>
-                                <option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option><option value="KS">Kansas</option><option value="KY">Kentucky</option>
-                                <option value="LA">Louisiana</option><option value="MA">Massachusetts</option><option value="MD">Maryland</option><option value="ME">Maine</option><option value="MI">Michigan</option>
-                                <option value="MN">Minnesota</option><option value="MO">Missouri</option><option value="MS">Mississippi</option><option value="MT">Montana</option><option value="NC">North Carolina</option>
-                                <option value="ND">North Dakota</option><option value="NE">Nebraska</option><option value="NH">New Hampshire</option><option value="NJ">New Jersey</option>
-                                <option value="NM">New Mexico</option><option value="NV">Nevada</option><option value="NY">New York</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option>
-                                <option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="PR">Puerto Rico</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option>
-                                <option value="SD">South Dakota</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option><option value="VA">Virginia</option>
-                                <option value="VT">Vermont</option><option value="WA">Washington</option><option value="WI">Wisconsin</option><option value="WV">West Virginia</option><option value="WY">Wyoming</option>
-                            </select>
-                        </div>
-                        <div class="col-2" style="padding-right: 0px;">
-                            <a role="button" class="btn btn-primary" (click)="runSearch()" style="width: 110px;">Search</a>
-                        </div>
+                    <div class="col-4">
+                        <label for="state-input" style="margin-bottom: 0px;">State</label>
                     </div>
-                    <!-- Secondary Search Options -->
-                    <div class="form-group row" style="margin-bottom: 0px;">
-                        <div class="col-4">
-                            <label for="cuisine-input" style="margin-bottom: 0px;">Cuisine</label>
-                        </div>
-                        <div class="col-4">
-                            <label for="budget-input" style="margin-bottom: 0px;">Budget</label>
-                        </div>
-                        <div class="col-4">
-                            <label for="wait-input" style="margin-bottom: 0px;">Max Wait (mins)</label>
-                        </div>
+                </div>
+                <div class="form-group row" style="margin-bottom: 5px;">
+                    <div class="col-6" style="padding-right: 0px;">
+                        <input class="form-control" type="text" [(ngModel)]="searchCity" [ngModelOptions]="{standalone: true}" (keyup.enter)="runSearch()" id="city-input">
                     </div>
-                    <div class="form-group row">
-                        <div class="col-4" style="padding-right: 0px;">
-                            <input class="form-control" type="text" [(ngModel)]="searchCuisine" [ngModelOptions]="{standalone: true}" (keyup.enter)="runSearch()" id="cuisine-input">
-                        </div>
-                        <div class="col-4" style="padding-right: 0px;">
-                            <select class="form-control" [(ngModel)]="searchBudget" [ngModelOptions]="{standalone: true}" (keyup.enter)="runSearch()" id="budget-input">
-                                <option></option>
-                                <option value="$1-10">$1-10</option>
-                                <option value="$10-30">$10-30</option>
-                                <option value="$30-60">$30-60</option>
-                                <option value="$60-100">$60-100</option>
-                                <option value="$100+">$100+</option>
-                            </select>
-                        </div>
-                        <div class="col-2" style="padding-right: 0px;">
-                            <input class="form-control" type="number" min="1" [(ngModel)]="searchWait" [ngModelOptions]="{standalone: true}" (keyup.enter)="runSearch()" id="wait-input">
-                        </div>
+                    <div class="col-4" style="padding-right: 0px;">
+                        <select class="form-control" [(ngModel)]="searchState" [ngModelOptions]="{standalone: true}" (keyup.enter)="runSearch()" id="state-input">
+                            <option value=""></option><option value="AK">Alaska</option><option value="AL">Alabama</option><option value="AR">Arkansas</option><option value="AZ">Arizona</option>
+                            <option value="CA">California</option><option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DC">District of Columbia</option>
+                            <option value="DE">Delaware</option><option value="FL">Florida</option><option value="GA">Georgia</option><option value="HI">Hawaii</option><option value="IA">Iowa</option>
+                            <option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option><option value="KS">Kansas</option><option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option><option value="MA">Massachusetts</option><option value="MD">Maryland</option><option value="ME">Maine</option><option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option><option value="MO">Missouri</option><option value="MS">Mississippi</option><option value="MT">Montana</option><option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option><option value="NE">Nebraska</option><option value="NH">New Hampshire</option><option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option><option value="NV">Nevada</option><option value="NY">New York</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="PR">Puerto Rico</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option><option value="VA">Virginia</option>
+                            <option value="VT">Vermont</option><option value="WA">Washington</option><option value="WI">Wisconsin</option><option value="WV">West Virginia</option><option value="WY">Wyoming</option>
+                        </select>
                     </div>
-                </form>
-            </div>
+                    <div class="col-2" style="padding-right: 0px;">
+                        <a role="button" class="btn btn-primary" (click)="runSearch()" style="width: 110px;">Search</a>
+                    </div>
+                </div>
+                <!-- Secondary Search Options -->
+                <div class="form-group row" style="margin-bottom: 0px;">
+                    <div class="col-4">
+                        <label for="cuisine-input" style="margin-bottom: 0px;">Cuisine</label>
+                    </div>
+                    <div class="col-4">
+                        <label for="budget-input" style="margin-bottom: 0px;">Budget</label>
+                    </div>
+                    <div class="col-4">
+                        <label for="wait-input" style="margin-bottom: 0px;">Max Wait (mins)</label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4" style="padding-right: 0px;">
+                        <input class="form-control" type="text" [(ngModel)]="searchCuisine" [ngModelOptions]="{standalone: true}" (keyup.enter)="runSearch()" id="cuisine-input">
+                    </div>
+                    <div class="col-4" style="padding-right: 0px;">
+                        <select class="form-control" [(ngModel)]="searchBudget" [ngModelOptions]="{standalone: true}" (keyup.enter)="runSearch()" id="budget-input">
+                            <option></option>
+                            <option value="$1-10">$1-10</option>
+                            <option value="$10-30">$10-30</option>
+                            <option value="$30-60">$30-60</option>
+                            <option value="$60-100">$60-100</option>
+                            <option value="$100+">$100+</option>
+                        </select>
+                    </div>
+                    <div class="col-2" style="padding-right: 0px;">
+                        <input class="form-control" type="number" min="1" [(ngModel)]="searchWait" [ngModelOptions]="{standalone: true}" (keyup.enter)="runSearch()" id="wait-input">
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
 
 <!-- Search Results -->
-<app-searchresults *ngIf="showResults">Loading...</app-searchresults>
+<div class="container">
+  <div *ngFor="let result of results">
+    <div class='card card-inverse' style='background-color: #333; border-color: #333; margin-bottom: 10px;'>
+      <div class='card-block'>
+        <h3 class='card-title'>{{result.name}}</h3>
+        <p class='card-text' style='margin-bottom: 0px;'><span>Address: </span>{{result.address}}, {{result.city}}, {{result.state}}</p>
+        <p class='card-text' style='margin-bottom: 0px;'><span>Phone: </span>{{result.phone}}</p>
+        <p class='card-text' style='margin-bottom: 0px;'><span>Cuisine: </span>{{result.cuisine}}</p>
+        <p class='card-text' style='margin-bottom: 0px;'><span>Budget: </span>{{result.budget}}</p>
+        <p class='card-text'><span>Wait Time: </span>{{result.lowWait}}-{{result.highWait}}<span>  minutes</span></p>
+        <form method='post'>
+          <a routerLink="/reservation" (click)="makeReservation()" class='btn btn-primary' role='button'>Queue Me</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
