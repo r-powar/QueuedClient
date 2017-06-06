@@ -23,6 +23,6 @@ export class QueuedService {
 
   getUserInfo() {
     return this.http.get(this.host + '/auth/userInfo')
-      .map(response => response.json);
+      .map(response => response.json());
   }
 }

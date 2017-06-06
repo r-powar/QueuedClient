@@ -12,7 +12,7 @@ export class ProviderComponent implements OnInit {
   route$: Router;
   queued$: QueuedService;
   showTime: boolean;
-  private model = new TimeModel(Number(), Number(), Number());
+  private model = new TimeModel(String(), Number(), Number());
   constructor(
     queued: QueuedService,
     route: Router
@@ -20,7 +20,13 @@ export class ProviderComponent implements OnInit {
     this.route$ = route;
     this.queued$ = queued;
     this.showTime = false;
-
+    this.queued$.getUserInfo()
+      .subscribe(
+        (result: any) => {
+          this.model.id = result.displayName;
+        },
+        () => console.log('name: ' + this.model.id)
+      );
   }
 
   showTimeForm() {

@@ -19,7 +19,8 @@ export class ReservationComponent implements OnInit {
       .subscribe(
         (result: any) => {
             this.username = result.displayName;
-        }
+        },
+        () => console.log('name: ' + this.username)
       );
   }
 
