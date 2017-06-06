@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class QueuedService {
-  host = '';
+  host = 'http://localhost:8080';
 
   constructor(private http: Http) {}
 
@@ -23,6 +23,11 @@ export class QueuedService {
 
   getUserInfo() {
     return this.http.get(this.host + '/auth/userInfo')
+      .map(response => response.json());
+  }
+
+  getGuestList(userId: string) {
+    return this.http.get(this.host + '/queued/providerList/' + userId)
       .map(response => response.json());
   }
 }

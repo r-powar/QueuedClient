@@ -6,7 +6,7 @@
         <a class="list-group-item" (click)="showTimeForm()">Submit Data</a>
         <a class="list-group-item">Feedback</a>
         <a class="list-group-item">Analytics</a>
-        <a class="list-group-item">Guest List</a>
+        <a class="list-group-item" (click)="showList()">Guest List</a>
       </div>
     </div>
     <div class="col-xs-9 col-sm-8 col-sm-push-3">
@@ -25,6 +25,22 @@
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
+      <div class="jumbotron" id="" *ngIf="showGuestList">
+        <div *ngFor="let result of list">
+          <div class='card card-inverse' style='background-color: #333; border-color: #333; margin-bottom: 10px;'>
+            <div class='card-block'>
+              <p class='card-text' style='margin-bottom: 0px;'><span>Guest Name: </span>{{result.guestName}}</p>
+              <p class='card-text' style='margin-bottom: 0px;'><span>Wait List: </span>{{result.waitList}}</p>
+              <p class='card-text' style='margin-bottom: 0px;'><span>Group Size: </span>{{result.groupSize}}</p>
+              <form method='post'>
+                <a routerLink="/"  class='btn btn-primary' role='button'>Notify</a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+
   </div>
 </div>
