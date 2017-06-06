@@ -9,7 +9,7 @@ import {QueuedService} from '../queued.service';
 })
 export class ReservationComponent implements OnInit {
   username: string;
-  useremail: string;
+  email: string;
   route$: Router;
   queued$: QueuedService;
   constructor(route: Router, queued: QueuedService) {
@@ -19,7 +19,6 @@ export class ReservationComponent implements OnInit {
       .subscribe(
         (result: any) => {
             this.username = result.displayName;
-            this.useremail = result.emails[0].value;
         }
       );
   }
