@@ -23,9 +23,9 @@ export class ProviderComponent implements OnInit {
     this.queued$.getUserInfo()
       .subscribe(
         (result: any) => {
-          this.model.id = result.displayName;
+          this.model.user = result.displayName;
         },
-        () => console.log('name: ' + this.model.id)
+        () => console.log('name: ' + this.model.user)
       );
   }
 

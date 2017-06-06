@@ -8,6 +8,7 @@ import { SearchModel } from './share/searchModel';
 @Injectable()
 export class SearchService {
   private results;
+  //host = 'http://localhost:8080';
   host = '';
 
   constructor(private http: Http) {}

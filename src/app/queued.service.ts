@@ -9,6 +9,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class QueuedService {
+  //host = 'http://localhost:8080';
   host = '';
 
   constructor(private http: Http) {}
