@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import { Observable } from 'rxjs/observable';
+import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import { RestaurantModel } from './share/restaurantModel';
 import { SearchModel } from './share/searchModel';

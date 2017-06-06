@@ -3,7 +3,7 @@
  */
 export class TimeModel {
   constructor(
-    public id: Number,
+    public id: String,
     public lowWait: Number,
     public highWait: Number
   ) {}
