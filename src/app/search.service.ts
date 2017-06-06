@@ -16,11 +16,30 @@ export class SearchService {
     return this.http.get(this.host + '/queued/restaurantlist').map(res => res.json());
   }
 
-  searchResults(body: Object): Observable<RestaurantModel[]> {
+  searchResults(search: SearchModel): Observable<RestaurantModel[]> {
     const headers = new Headers({ 'Content-Type': 'application/json' });
     const options = new RequestOptions({ headers: headers });
-    return this.http.post( this.host + '/queued/restaurantlist/search', JSON.stringify(body), options)
-      .map((res: Response) => res.json())
-      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+
+    var url = '/queued/restaurantlist/search?';
+    if (search.searchCity) {
+      url += ('city=' + search.searchCity + '&');
+    }
+    if (search.searchState) {
+      url += ('state=' + search.searchState + '&');
+    }
+    if (search.searchCuisine) {
+      url += ('cuisine=' + search.searchCuisine + '&');
+    }
+    if (search.searchBudget) {
+      url += ('budget=' + search.searchBudget + '&');
+    }
+    if (search.searchWait) {
+      url += ('wait=' + search.searchWait.toString());
+    }
+
+    console.log(url);
+
+    return this.http.get((this.host + url), options)
+      .map((res: Response) => res.json());
   }
 }
