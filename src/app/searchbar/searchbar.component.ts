@@ -25,28 +25,17 @@ export class SearchbarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.searchCity = "";
-    this.searchState = "";
-    this.searchCuisine = "";
-    this.searchBudget = "";
-    this.searchWait = null;
     this.showResults = false;
   }
 
   runSearch() {
+    this.showResults = false;
     var search: SearchModel = new SearchModel();
     search.searchCity = this.searchCity;
     search.searchState = this.searchState;
     search.searchCuisine = this.searchCuisine;
     search.searchBudget = this.searchBudget;
-    if (this.searchWait != null)
-    {
-      search.searchWait = this.searchWait;
-    }
-    else
-    {
-      search.searchWait = 0;
-    }
+    search.searchWait = this.searchWait;
 
     this._SearchService.searchResults(search).subscribe(results => {
       this.results = results;
