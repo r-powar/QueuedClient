@@ -8,11 +8,20 @@ import {QueuedService} from '../queued.service';
   styleUrls: ['./reservation.component.css']
 })
 export class ReservationComponent implements OnInit {
+  username: string;
+  useremail: string;
   route$: Router;
   queued$: QueuedService;
   constructor(route: Router, queued: QueuedService) {
     this.queued$ = queued;
     this.route$ = route;
+    this.queued$.getUserInfo()
+      .subscribe(
+        result => {
+            this.username = result.displayName;
+            this.useremail = result.emails[0].value;
+        }
+      );
   }
 
   ngOnInit() {
