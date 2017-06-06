@@ -17,7 +17,7 @@ export class ReservationComponent implements OnInit {
     this.route$ = route;
     this.queued$.getUserInfo()
       .subscribe(
-        result => {
+        (result: any) => {
             this.username = result.displayName;
             this.useremail = result.emails[0].value;
         }
